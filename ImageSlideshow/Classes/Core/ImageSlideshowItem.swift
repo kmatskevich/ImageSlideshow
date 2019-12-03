@@ -61,6 +61,10 @@ open class ImageSlideshowItem: UIScrollView, UIScrollViewDelegate {
         imageView.clipsToBounds = true
         imageView.isUserInteractionEnabled = true
 
+        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft {
+            imageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+        }
+
         setPictoCenter()
 
         // scroll view configuration
